@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Story } from '../types';
 import { analyzeText } from '../services/geminiService';
@@ -45,7 +46,7 @@ export const LibraryView: React.FC<LibraryViewProps> = ({ knownLang, onRead }) =
                  <i className="fa fa-book"></i> Read
                </button>
                <button onClick={handleAnalyze} disabled={loading || !!analysis} className="prominent" style={{background:'#fff', color:'#333', border:'1px solid #ccc', opacity: (loading || analysis) ? 0.5 : 1}}>
-                 <i className="fa fa-magic"></i> {loading ? 'Analyzing...' : `Explain in ${knownLang}`}
+                 <i className="fa fa-magic"></i> {loading ? 'Analyzing...' : `Analyze Text`}
                </button>
             </div>
           </div>

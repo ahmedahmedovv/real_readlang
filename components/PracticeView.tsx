@@ -291,9 +291,11 @@ const FlashcardSession: React.FC<PracticeViewProps> = ({ targetWord, knownLang, 
 
         {/* Delete Button */}
         {revealed && (
-           <button id="delete" className="prominent" style={{display:'inline-block', background:'#d9534f'}} onClick={handleDelete}>
-             <i className="fa fa-trash"></i> &nbsp; Delete this card
-           </button>
+           <div style={{textAlign:'center'}}>
+             <button id="delete" className="prominent" style={{display:'inline-block', background:'#d9534f'}} onClick={handleDelete}>
+               <i className="fa fa-trash"></i> &nbsp; Delete this card
+             </button>
+           </div>
         )}
 
       </div>

@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from 'react';
 import { startChatSession } from '../services/geminiService';
 import { ChatMessage, ChatSession } from '../types';
@@ -27,19 +28,11 @@ export const ChatView: React.FC<ChatViewProps> = ({ knownLang, learningLang }) =
     setLoading(true);
     chatRef.current = startChatSession(knownLang, learningLang);
     
-    try {
-      const response = await chatRef.current.sendMessage({ 
-        message: `Introduce yourself briefly as my ${learningLang} tutor.` 
-      });
-      
-      if (response.text) {
-        setMessages([{ id: 'init', role: 'model', text: response.text }]);
-      }
-    } catch (e) {
-      setMessages([{ id: 'err', role: 'model', text: "Connection error." }]);
-    } finally {
-      setLoading(false);
-    }
+    // Simulate init message
+    setTimeout(() => {
+        setMessages([{ id: 'init', role: 'model', text: `Hello! I am a dummy ${learningLang} tutor.` }]);
+        setLoading(false);
+    }, 500);
   };
 
   const handleSend = async (e: React.FormEvent) => {
@@ -70,7 +63,7 @@ export const ChatView: React.FC<ChatViewProps> = ({ knownLang, learningLang }) =
              <i className="fa fa-android fa-2x" style={{color:'#48a488'}}></i>
              <div>
                <h3 style={{margin:0, color:'#333'}}>{learningLang} Tutor</h3>
-               <small style={{color:'#888'}}>Powered by Mistral AI</small>
+               <small style={{color:'#888'}}>Demo Bot (No AI)</small>
              </div>
           </div>
           <button onClick={startNewChat} style={{background:'none', border:'none', cursor:'pointer', color:'#888'}}>
