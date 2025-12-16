@@ -14,7 +14,7 @@ const App: React.FC = () => {
   const [showKeyModal, setShowKeyModal] = useState(false);
   const [inputKey, setInputKey] = useState('');
   
-  const [activeTab, setActiveTab] = useState<Tab>(Tab.WORD_LIST);
+  const [activeTab, setActiveTab] = useState<Tab>(Tab.HOME);
   const [practiceTargetWord, setPracticeTargetWord] = useState<string | null>(null);
   const [currentReadingStory, setCurrentReadingStory] = useState<Story | null>(null);
   
