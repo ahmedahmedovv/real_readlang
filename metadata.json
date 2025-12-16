@@ -1,0 +1,5 @@
+{
+  "name": "Readlang Clone with Gemini",
+  "description": "A language learning practice tool replicating the Readlang UI, powered by Gemini 2.5.",
+  "requestFramePermissions": []
+}
